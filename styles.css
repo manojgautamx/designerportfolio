@@ -397,7 +397,7 @@ body {
   }
 
   .footer {
-    font-family: "Poppins", serif;
+    font-family: Poppins, Geneva, Tahoma, sans-serif;
     margin-top: 10px;
     padding: 10px;
     background-color: #101010;
