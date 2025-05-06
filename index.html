@@ -1,557 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manuj Gautam- Graphic Designer</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YOU NEVER DIE</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <script src="https://player.vimeo.com/api/player.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .red-text {
+      color: #ffffff;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Share Tech Mono', monospace;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #fefefe;
+    }
+
+    .slider-container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .slide p {
+      font-size: 1.5rem;
+      line-height: 1.6;
+      max-width: 900px;
+      padding: 1rem;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 20px;
+      font-size: 1.5rem;
+      color: white;
+      padding: 0.3em 0.6em;
+      cursor: pointer;
+      user-select: none;
+      z-index: 10;
+    }
+
+    .arrow.left {
+      left: 20px;
+    }
+
+    .arrow.right {
+      right: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .slide p {
+        font-size: 1.2rem;
+      }
+
+      .arrow {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="slider-container">
+    <div class="arrow left">&#10094;</div>
+    <div class="arrow right">&#10095;</div>
 
-    <nav class="navbar">
-        <a href="index.html"><img class="logo" src="img/brand12.png" alt=""></a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#portfolio">Work</a></li>
-            <li><a href="mailto:manojgautam521133@gmail.com">Contact</a></li>       
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-    </nav>
+    <div class="slide active">
+      <p class="red-text">You don’t die. Not ever. Not really.</p>
+    </div>
+    <div class="slide">
+      <p>Remember that truck while riding your motorbike which came so close you smelled the diesel? It crushed you. Somewhere. Your bones snapped. But here you are, heart still kicking.</p>
+    </div>
+    <div class="slide">
+      <p>Remember that COVID fever so bad that burned you up, lungs choking on your own breath? It killed you. Your body withered, alone in a hospital bed. But you blinked, and you’re standing, shivering, alive.</p>
+    </div>
+    <div class="slide">
+      <p>Remember that night you couldn’t take it—gun in your head, finger on the trigger? You pulled it. Brains on the wall. Your mom screamed. But you woke up, gun gone, same shitty room.</p>
+    </div>
+    <div class="slide">
+      <p>The thing is You die every time. You feel it—ribs breaking, skull splitting, heart stopping. Phantom pain that never fades. Then you jump. New universe. New you. Old misery.</p>
+    </div>
+    <div class="slide">
+      <p>Your friends, your family—they cremate you in those worlds you leave. You don’t see their tears, but you hear their sobs in your dreams. They’re ghosts in your head now.</p>
+    </div>
+    <div class="slide">
+      <p>In 150 years, you’ll be a fucking relic. Oldest bastard alive. In a thousand, a legend. Ten thousand, a cursed god, spitting in the face of death.</p>
+    </div>
+    <div class="slide">
+      <p>You never die. You just carry every death with you. So quit whining. You’re the god of this endless shitshow. Live it. Bleed it. Own it.</p>
+    </div>
+  </div>
 
-    <section>
-        <div class="hero-section">
-            <div class="text-content">
-                <h1>MANUJ GAUTAM</h1>
-                <h3>GRAPHIC DESIGNER BASED IN KATHMANDU, NEPAL</h3>
-                <p>SPECIALIZES IN SOCIAL MEDIA, MOTION GRAPHICS, ILLUSTRATION & UI/UX DESIGN</p>
-    
-                <a href="#portfolio" class="scroll-button">
-                    <span>Scroll to See My Portfolio</span>
-                    <div class="arrow-line">
-                        <div class="line"></div>
-                        <div class="arrow"></div>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="image-content">
-                <img src="hero.png" alt="Statue" class="statue-image">
-            </div>
-        </div>
-    </section>
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const leftArrow = document.querySelector('.arrow.left');
+    const rightArrow = document.querySelector('.arrow.right');
+    let current = 0;
+    let slideInterval;
 
-    <section class="brands" id="portfolio">
-        <h2>Some of the Brands I've Worked With</h2>
-        <div class="logo-container">
-            <div class="logo-slider">
-                <img src="img/brand1.png" alt="Brand 1">
-                <img src="img/brand2.png" alt="Brand 2">
-                <img src="img/brand3.png" alt="Brand 3">
-                <img src="img/brand4.png" alt="Brand 4">
-                <img src="img/brand5.png" alt="Brand 5">
-                <img src="img/brand6.png" alt="Brand 6">
-                <img src="img/brand7.png" alt="Brand 6">
-                <img src="img/brand8.png" alt="Brand 6">
-                <img src="img/brand9.png" alt="Brand 6">
-                <img src="img/brand10.png" alt="Brand 6">
-                <!-- Repeat logos for infinite scrolling effect -->
-                <img src="img/brand1.png" alt="Brand 1">
-                <img src="img/brand2.png" alt="Brand 2">
-                <img src="img/brand3.png" alt="Brand 3">
-                <img src="img/brand4.png" alt="Brand 4">
-                <img src="img/brand5.png" alt="Brand 5">
-                <img src="img/brand6.png" alt="Brand 6">
-                <img src="img/brand7.png" alt="Brand 6">
-                <img src="img/brand8.png" alt="Brand 6">
-                <img src="img/brand9.png" alt="Brand 6">
-                <img src="img/brand10.png" alt="Brand 6">
-            </div>
-        </div>
-    </section>
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) slide.classList.add('active');
+      });
+    }
 
-    <section class="hero">
-        <div class="hero-content">
-          <div class="text-section dabur">
-            <h1>Designs</h1>
-            <h4>Social Media & Motion</h4>
-          </div>
-          <div class="image-section">
-            <img src="img/design.png" alt="Mobile Mockup">
-          </div>
-        </div>
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
 
-        <div class="gallery">
-            <div class="gallery-item">
-                <!-- Embed Vimeo Video -->
-                <div style="padding:111% 0 0 0;position:relative;">
-                    <iframe 
-                        src="https://player.vimeo.com/video/1048128880?h=145cb172a9&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="Vimeo Video">
-                    </iframe>
-                    
-                </div>
-            </div>
-            <div class="gallery-item">
-                <!-- Embed Vimeo Video -->
-                <div style="padding:111% 0 0 0;position:relative;">
-                    <iframe 
-                        src="https://player.vimeo.com/video/1048128873?h=88535bf859&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="Vimeo Video">
-                    </iframe>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="img/2.jpg" alt="Image 3">
-            </div>
-            </div>
-            
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="img/3.jpg" alt="Image 1">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/4.jpg" alt="Image 3">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/6.jpg" alt="Image 3">
-                </div>
-            </div>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="img/7.jpg" alt="Image 1">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/8.jpg" alt="Image 3">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/9.jpg" alt="Image 3">
-                </div>
-            </div>
-            
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
 
-        <div class="gallery">
-            <div class="gallery-item">
-                <!-- Embed Vimeo Video -->
-                <div style="padding:111% 0 0 0;position:relative;">
-                    <iframe 
-                        src="https://player.vimeo.com/video/1048127430?h=f5a919c1da&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="Vimeo Video">
-                    </iframe>
-                    
-                </div>
-            </div>
-            <div class="gallery-item">
-                <!-- Embed Vimeo Video -->
-                <div style="padding:111% 0 0 0;position:relative;">
-                    <iframe 
-                        src="https://player.vimeo.com/video/1048127334?h=02b21b72a8&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="Vimeo Video">
-                    </iframe>
-                    
-                </div>
-            </div>
+    function startAutoplay() {
+      slideInterval = setInterval(nextSlide, 8000);
+    }
 
+    function resetAutoplay() {
+      clearInterval(slideInterval);
+      startAutoplay();
+    }
 
-            <div class="gallery-item">
-                <img src="img/16.jpg" alt="Image 3">
-            </div>
-            </div>
-            
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="img/14.jpg" alt="Image 3">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/15.jpg" alt="Image 3">
-                </div>
-                <div class="gallery-item">
-                    <!-- Embed Vimeo Video -->
-                    <div style="padding:111% 0 0 0;position:relative;">
-                        <iframe 
-                            src="https://player.vimeo.com/video/1048127320?h=12a0f9428b&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                            frameborder="0" 
-                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                            style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                            title="Vimeo Video">
-                        </iframe>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="img/17.jpg" alt="Image 1">
-                </div>
-                <div class="gallery-item">
-                    <!-- Embed Vimeo Video -->
-                    <div style="padding:111% 0 0 0;position:relative;">
-                        <iframe 
-                            src="https://player.vimeo.com/video/1048298437?h=dd49505ac6&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                            frameborder="0" 
-                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                            style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                            title="Vimeo Video">
-                        </iframe>
-                        
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <!-- Embed Vimeo Video -->
-                    <div style="padding:111% 0 0 0;position:relative;">
-                        <iframe 
-                            src="https://player.vimeo.com/video/1048298462?h=840fb5b792&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                            frameborder="0" 
-                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                            style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                            title="Vimeo Video">
-                        </iframe>
-                        
-                    </div>
-                </div>
-    
-            </div>
+    leftArrow.addEventListener('click', () => {
+      prevSlide();
+      resetAutoplay();
+    });
 
-        <div class="gallery">
-            
-            <div class="gallery-item">
-                <!-- Embed Vimeo Video -->
-                <div style="padding:111% 0 0 0;position:relative;">
-                    <iframe 
-                        src="https://player.vimeo.com/video/1048298471?h=6d44b9ca88&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="Vimeo Video">
-                    </iframe>
-                    
-                </div>
-            </div>
+    rightArrow.addEventListener('click', () => {
+      nextSlide();
+      resetAutoplay();
+    });
 
-            <div class="gallery-item">
-                <img src="img/24.jpg" alt="Image 3">
-            </div>
-
-            
-        </div>
-            
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="img/21.jpg" alt="Image 1">
-            </div>
-            <div class="gallery-item">
-                <img src="img/16.jpg" alt="Image 3">
-            </div>
-            <div class="gallery-item">
-                <img src="img/23.jpg" alt="Image 3">
-            </div>
-            
-            <div class="gallery-item">
-                <!-- Embed Vimeo Video -->
-                <div style="padding:111% 0 0 0;position:relative;">
-                    <iframe 
-                        src="https://player.vimeo.com/video/1048298486?h=4e11c71b1e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="Vimeo Video">
-                    </iframe>
-                    
-                </div>
-            </div>
-        </div>
-        <div class="gallery">
-            <div class="gallery-item">
-                <!-- Embed Vimeo Video -->
-                <div style="padding:111% 0 0 0;position:relative;">
-                    <iframe 
-                        src="https://player.vimeo.com/video/1048548944?h=cf6417e1c8&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="Vimeo Video">
-                    </iframe>
-                    
-                </div>
-            </div>
-            <div class="gallery-item">
-                <!-- Embed Vimeo Video -->
-                <div style="padding:111% 0 0 0;position:relative;">
-                    <iframe 
-                        src="https://player.vimeo.com/video/1048548967?h=3e12e89f0c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="Vimeo Video">
-                    </iframe>
-                    
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <!-- Embed Vimeo Video -->
-                <div style="padding:111% 0 0 0;position:relative;">
-                    <iframe 
-                        src="https://player.vimeo.com/video/1048548994?h=f823e05593&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="Vimeo Video">
-                    </iframe>
-                    
-                </div>
-            </div>
-  
-        </div>
-            
-        <div class="gallery">
-            
-            <div class="gallery-item">
-                <img src="img/42.jpg" alt="Image 3">
-            </div>
-
-            <div class="gallery-item">
-                <!-- Embed Vimeo Video -->
-                <div style="padding:111% 0 0 0;position:relative;">
-                    <iframe 
-                        src="https://player.vimeo.com/video/1048548883?h=9f9e1ccc76&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="Vimeo Video">
-                    </iframe>
-                    
-                </div>
-            </div>
-            
-            <div class="gallery-item">
-                <!-- Embed Vimeo Video -->
-                <div style="padding:111% 0 0 0;position:relative;">
-                    <iframe 
-                        src="https://player.vimeo.com/video/1048548913?h=f3d998cc7d&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="Vimeo Video">
-                    </iframe>
-                    
-                </div>
-            </div>
-        </div>
-
-        <div class="gallery">
-            <div class="gallery-item">
-                <!-- Embed Vimeo Video -->
-                <div style="padding:111% 0 0 0;position:relative;">
-                    <iframe 
-                        src="https://player.vimeo.com/video/1048548818?h=20b1b214e0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="Vimeo Video">
-                    </iframe>
-                    
-                </div>
-            </div>
-            
-            <div class="gallery-item">
-                <img src="img/43.jpg" alt="Image 3">
-            </div>
-
-            <div class="gallery-item">
-                <!-- Embed Vimeo Video -->
-                <div style="padding:111% 0 0 0;position:relative;">
-                    <iframe 
-                        src="https://player.vimeo.com/video/1048553356?h=23edefbb6d&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="Vimeo Video">
-                    </iframe>
-                    
-                </div>
-            </div>
-            
-            <div class="gallery-item">
-                <!-- Embed Vimeo Video -->
-                <div style="padding:111% 0 0 0;position:relative;">
-                    <iframe 
-                        src="https://player.vimeo.com/video/1048553325?h=e7f1582ce6&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="Vimeo Video">
-                    </iframe>
-                    
-                </div>
-            </div>
-        </div>
-
-        <div class="gallery">
-            <div class="gallery-item">
-                <!-- Embed Vimeo Video -->
-                <div style="padding:111% 0 0 0;position:relative;">
-                    <iframe 
-                        src="https://player.vimeo.com/video/1048553419?h=1bcdb71916&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="Vimeo Video">
-                    </iframe>
-                    
-                </div>
-            </div>
-            
-            <div class="gallery-item">
-                <img src="img/44.jpg" alt="Image 3">
-            </div>
-
-            <div class="gallery-item">
-                <!-- Embed Vimeo Video -->
-                <div style="padding:111% 0 0 0;position:relative;">
-                    <iframe 
-                        src="https://player.vimeo.com/video/1048553394?h=8295ff574c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                        title="Vimeo Video">
-                    </iframe>
-                    
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <section class="hero">
-        <div class="hero-content">
-          <div class="text-section artwork">
-            <h1>Artworks</h1>
-            <h4>Comics & Illustrations</h4>
-          </div>
-          <div class="image-section">
-            <img src="img/brand11.png" alt="Mobile Mockup">
-          </div>
-        </div>
-    
-            
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="img/25.png" alt="Image 1">
-            </div>
-            <div class="gallery-item">
-                <img src="img/26.jpg" alt="Image 3">
-            </div>
-            <div class="gallery-item">
-                <img src="img/27.png" alt="Image 3">
-            </div>
-            <div class="gallery-item">
-                <img src="img/28.png" alt="Image 3">
-            </div>
-        </div>
-
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="img/29.png" alt="Image 1">
-            </div>
-            <div class="gallery-item">
-                <img src="img/30.png" alt="Image 3">
-            </div>
-            <div class="gallery-item">
-                <img src="img/31.png" alt="Image 3">
-            </div>
-            <div class="gallery-item">
-                <img src="img/32.png" alt="Image 3">
-            </div>
-        </div>
-
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="img/33.png" alt="Image 1">
-            </div>
-            <div class="gallery-item">
-                <img src="img/34.png" alt="Image 3">
-            </div>
-            <div class="gallery-item">
-                <img src="img/35.png" alt="Image 3">
-            </div>
-            <div class="gallery-item">
-                <img src="img/36.png" alt="Image 3">
-            </div>
-        </div>
-
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="img/1.png" alt="Image 1">
-            </div>
-            <div class="gallery-item">
-                <img src="img/3.png" alt="Image 3">
-            </div>
-            <div class="gallery-item">
-                <img src="img/5.png" alt="Image 3">
-            </div>
-            <div class="gallery-item">
-                <img src="img/36.png" alt="Image 3">
-            </div>
-        </div>
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="img/38.png" alt="Image 1">
-            </div>
-            <div class="gallery-item">
-                <img src="img/39.png" alt="Image 3">
-            </div>
-            <div class="gallery-item">
-                <img src="img/40.png" alt="Image 3">
-            </div>
-            <div class="gallery-item">
-                <img src="img/19.png" alt="Image 3">
-            </div>
-        </div>
-    </section>
-
-
-
-
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2024. Manoj Gautam</p>
-            <div class="social-icons">
-                <a href="mailto:manojgautam521133@gmail.com" class="social-icon">
-                    <ion-icon name="mail-outline"></ion-icon>
-                </a>
-                <a href="https://www.instagram.com/manusegautam" target="_blank" class="social-icon">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-            </div>
-        </div>
-    </footer>
-    
-    
-
-    <script src="script.js"></script>
+    startAutoplay();
+  </script>
 </body>
 </html>
